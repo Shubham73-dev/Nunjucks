@@ -9,7 +9,13 @@
     margin-bottom: 2rem;
 }
 .oddUserDetailContainer{
-    background-color: red;
+    background-color: #ef3f3f;
     color: white;
     margin: 14px 0;
+    padding: 10px;
+    font-size: 22px;
+    letter-spacing: 2px;
+}
+.section_2 h2:not(:first-child){
+    margin: 2rem;
 }

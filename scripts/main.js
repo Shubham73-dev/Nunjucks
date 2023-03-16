@@ -28,23 +28,22 @@ function bindEvents() {
         oddUserDetailContainer.innerHTML = "<strong>I'm an odd user</strong>"
       }
       const section_2 = document.getElementsByClassName('section_2')[0];
-      var ele = document.createElement('div')
-      var ele_2 = document.createElement('div')
-      section_2.appendChild(ele)
-      section_2.appendChild(ele_2)
 
       // get address keys and values
+      const userId = document.createElement('h2')
+      userId.innerHTML = `Address details for userid: ${user.id}`
+      section_2.appendChild(userId)
       const address = user.address;
       const addressKeys = Object.keys(address);
       const addressValues = Object.values(address);
+      addressValues.map((value,index)=>{
+        var addEle = document.createElement('div')
+        addEle.innerHTML = value;
+        section_2.appendChild(addEle)
+      })
 
       // print address keys and values
-      ele.innerHTML = `Address of User ${user.id}:`
-      addressKeys.map((key, index) => {
-        var spanele = document.createElement('span')
-        spanele.innerHTML = `${key}`
-        section_2.appendChild(ele)
-      });
+
 
       // check if email ends with .biz
       if (user.email.endsWith('.biz')) {
@@ -56,6 +55,7 @@ function bindEvents() {
       const zipcode = user.address.zipcode;
       const geo = user.address.geo;
       if (city.includes('Aliyaview') || city.includes('Howemouth') || city.includes('Gwenborough')) {
+        
         console.log(`The Zipcode and Geo of cityname ${city} is: ${zipcode} and ${JSON.stringify(geo)}`);
       }
 
