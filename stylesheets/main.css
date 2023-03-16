@@ -3,6 +3,10 @@
     padding: 0;
     font-family: 'Roboto', sans-serif;
 }
+section:not(:last-child){
+    border-bottom: 2px solid black;
+    padding: 1rem;
+}
 .userDetailContainer{
     display: flex;
     flex-direction: column;
@@ -18,4 +22,9 @@
 }
 .section_2 h2:not(:first-child){
     margin: 2rem;
+}
+.details{
+    padding: 14px 0;
+    font-weight: 400;
+    font-size: 22px;
 }

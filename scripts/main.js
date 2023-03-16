@@ -51,18 +51,27 @@ function bindEvents() {
       }
 
       // check if city is Aliyaview, Howemouth, or Gwenborough
+      const section_3 = document.getElementsByClassName('section_3')[0];
       const city = user.address.city;
       const zipcode = user.address.zipcode;
       const geo = user.address.geo;
       if (city.includes('Aliyaview') || city.includes('Howemouth') || city.includes('Gwenborough')) {
-        
-        console.log(`The Zipcode and Geo of cityname ${city} is: ${zipcode} and ${JSON.stringify(geo)}`);
+        var cityEle = document.createElement('div');
+        cityEle.className = 'details';
+        section_3.appendChild(cityEle)
+        cityEle.innerHTML = `The Zipcode and Geo of cityname ${city} is: ${zipcode} and ${JSON.stringify(geo)}`
+        // console.log(`The Zipcode and Geo of cityname ${city} is: ${zipcode} and ${JSON.stringify(geo)}`);
       }
 
       // print max 15 letters of catchphrase
+      const section_4 = document.getElementsByClassName('section_4')[0];
+      var catchPhraseEle = document.createElement('div')
+      catchPhraseEle.className = 'details';
+      section_4.appendChild(catchPhraseEle)
       const catchPhrase = user.company.catchPhrase;
       const maxChars = Math.min(catchPhrase.length, 15);
-      console.log(`User ${user.id} catchphrase: ${catchPhrase.slice(0, maxChars)}`);
+      catchPhraseEle.innerHTML = `User ${user.id} catchphrase: ${catchPhrase.slice(0, maxChars)}`
+      // console.log(`User ${user.id} catchphrase: ${catchPhrase.slice(0, maxChars)}`);
     });
   }
   )
